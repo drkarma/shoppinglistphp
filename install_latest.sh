@@ -29,3 +29,15 @@ echo "🗃️ Initierar databas..."
 php scripts/init_db.php || { echo "❌ Fel vid initiering av databasen."; exit 1; }
 
 echo "✅ Klar! Systemet är installerat från: $LATEST_ZIP"
+# Git-autocommit för aktuell version
+
+version=$(basename "$latest_zip" .zip)
+if [ -d .git ]; then
+  git add .
+  git commit -m "💾 Installerad version: $version"
+  echo "✅ Git commit skapad för $version"
+  git tag "$version"
+  echo "🏷️  Git tag skapad: $version"
+else
+  echo "⚠️ Git är inte initierat i denna katalog. Skipping commit."
+fi
