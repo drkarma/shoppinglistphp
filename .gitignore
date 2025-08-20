@@ -1,0 +1,8 @@
+# Ignorera databasfiler
+/data/
+
+# Ignorera zip-arkiv
+*.zip
+
+# Ignorera OS/systemfiler
+.DS_Store
