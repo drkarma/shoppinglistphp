@@ -6,8 +6,7 @@ class ListController {
         echo "<h1>Skapa en ny lista</h1>";
         echo "<form method='POST' action='?action=create'>";
         echo "Titel: <input type='text' name='title' required><br>";
-        echo "Typ: ";
-        echo "<select name='type'>";
+        echo "Typ: <select name='type'>";
         echo "<option value='shopping'>Inköpslista</option>";
         echo "<option value='todo'>ToDo-lista</option>";
         echo "<option value='checklist'>Processchecklista</option>";
