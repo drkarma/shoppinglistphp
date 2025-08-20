@@ -1,0 +1,1 @@
+<?php class ListController { public function create() {} } ?>
