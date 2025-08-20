@@ -1,11 +1,21 @@
 <?php
-$dbPath = __DIR__ . '/../data/shoppinglist.sqlite';
-$pdo = new PDO('sqlite:' . $dbPath);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$pdo->exec("CREATE TABLE IF NOT EXISTS lists (
+$db = new PDO('sqlite:' . __DIR__ . '/../data/shoppinglist.sqlite');
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$db->exec("CREATE TABLE IF NOT EXISTS lists (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT,
-    type TEXT,
+    title TEXT NOT NULL,
+    type TEXT NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )");
-echo "Database initialized at " . realpath($dbPath) . "\n";
+
+$db->exec("CREATE TABLE IF NOT EXISTS list_items (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    list_id INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    quantity TEXT,
+    checked INTEGER DEFAULT 0,
+    FOREIGN KEY (list_id) REFERENCES lists(id)
+)");
+
+echo 'Database initialized at ' . __DIR__ . '/../data/shoppinglist.sqlite';
