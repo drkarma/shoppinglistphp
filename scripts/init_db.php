@@ -1,1 +1,1 @@
-<php code for init_db>
+<?php // Init DB script ?>

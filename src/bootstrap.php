@@ -1,1 +1,1 @@
-<php code for bootstrap>
+<?php // Bootstrap-kod ?>

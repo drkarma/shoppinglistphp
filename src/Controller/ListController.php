@@ -1,1 +1,1 @@
-<php code for controller>
+<?php class ListController {} ?>

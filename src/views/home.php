@@ -1,1 +1,1 @@
-<html code for home view>
+<h1>Start</h1>

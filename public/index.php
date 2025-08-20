@@ -1,1 +1,1 @@
-<php code for index>
+Exempel PHP-innehåll för index

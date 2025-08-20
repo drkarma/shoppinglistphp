@@ -1,1 +1,1 @@
-<html code for view list>
+<h1>Lista</h1>
